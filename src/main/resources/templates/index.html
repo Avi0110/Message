@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message 💖</title>
+
+    <style>
+        /* Background Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ffd3e3, #ffb6c1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for Message Box */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeIn 1s forwards;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Heading Styling */
+        h1 {
+            color: #d63384;
+            opacity: 0;
+            animation: fadeInText 1.5s forwards 0.5s;
+        }
+
+        /* Fade-in Animation for Text */
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+
+        /* Special Message Styling */
+        p {
+            font-size: 1.1em;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 100%;
+            max-width: 250px;
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button Colors */
+        .btn1 { background: #ff85a2; } /* Pink */
+        .btn2 { background: #85baff; } /* Blue */
+        .btn3 { background: #ffd700; color: black; } /* Yellow */
+        .btn4 { background: #c985ff; } /* Purple */
+
+        /* Button Hover Effects */
+        .btn1:hover { background: #ff4d6d; }
+        .btn2:hover { background: #5a9cff; }
+        .btn3:hover { background: #e6c200; }
+        .btn4:hover { background: #a65eff; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hey, <span th:text="${name}"></span> ❤️</h1>
+    <p>You are very special to me. I just wanted to let you know how much you mean to me.</p>
+    <p>Take your time, but please choose one of the options below:</p>
+
+    <div class="button-container">
+        <a href="/option1" class="button btn1">Let's Fix This</a>
+        <a href="/option2" class="button btn2">We Need to Talk</a>
+        <a href="/option3" class="button btn3">Take Your Time</a>
+        <a href="/option4" class="button btn4">Let's Stay Friends</a>
+    </div>
+</div>
+
+</body>
+</html>
